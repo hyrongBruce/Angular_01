@@ -330,7 +330,8 @@
       </g>
     </svg>
 
-    <span>{{ title }} app is running!</span>
+    <span>{{ title }} app is running!</span> <br>
+    <span>{{ name }} use interpolation</span>
 
     <svg id="rocket-smoke" alt="Rocket Ship Smoke" xmlns="http://www.w3.org/2000/svg" width="516.119" height="1083.632" viewBox="0 0 516.119 1083.632">
       <path id="Path_40" data-name="Path 40" d="M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z" transform="translate(-147.025 -140.939)" fill="#f5f5f5"/>
@@ -420,6 +421,31 @@
       <pre *ngSwitchCase="'dependency'">ng add _____</pre>
       <pre *ngSwitchCase="'test'">ng test</pre>
       <pre *ngSwitchCase="'build'">ng build --prod</pre>
+  </div>
+  <!-- this is my first time using binding here; -->
+  <div>
+    <h3>DAY1---> DataBinding:</h3>
+    interpolation:<p>{{name}}</p>
+    property binding:<p [innerText] = "name+'these are string connected' "></p>
+    event binding : <button (click) = 'buttonHoverd()'>click me wont change anything</button><p>Button wont count ur click, {{count}} times( try hover failed fix latter)</p>
+    two way binding:  try enter Email: <input type="text" [(ngModel)]="emailAddress" />
+    you entered your Email as: {{emailAddress}}<br/>
+    <h3> DAY2---> CUSTOMIZED DIRECTIVE:</h3>
+    Try change backgroundColor and show input with console:<br/>
+    <input type="text" appInputDirective/>
+  </div>
+<!-- this is Day2 clock -->
+  <div style="border: 5px solid black;">
+    <h5>NJ Time:</h5>
+    
+    {{ RootTime | date: 'hh:mm:ss a' }}
+    <br>
+    <h5>London Time: </h5>
+   
+    {{ LondonTime | date: 'hh:mm:ss a' }}
+    <br/>
+    BUT THIS VERSION WONT AUTOCHANGE FOR LONDON TIME
+    <!-- {{datePipeTime}} -->
   </div>
 
   <!-- Links -->
