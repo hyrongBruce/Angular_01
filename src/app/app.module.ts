@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FirstComponentComponent } from './first-component/first-component.component';
 import { InputDirectiveDirective } from './input-directive.directive';
+import { ClockComponent } from './clock/clock.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponentComponent,
-    InputDirectiveDirective
+    InputDirectiveDirective,
+    ClockComponent
   ],
   imports: [
     BrowserModule,

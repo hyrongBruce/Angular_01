@@ -435,7 +435,7 @@
     <input type="text" appInputDirective/>
   </div>
 <!-- this is Day2 clock -->
-  <div style="border: 5px solid black;">
+  <div style="border: 5px solid black; text-align: center;">
     <h5>NJ Time:</h5>
     
     {{ RootTime | date: 'hh:mm:ss a' }}
@@ -447,6 +447,8 @@
     BUT THIS VERSION WONT AUTOCHANGE FOR LONDON TIME
     <!-- {{datePipeTime}} -->
   </div>
+  <app-first-component></app-first-component>
+  <app-clock></app-clock>
 
   <!-- Links -->
   <div class="card-container">

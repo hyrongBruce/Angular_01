@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import{FirstComponentComponent} from './first-component/first-component.component';
 import { DatePipe } from '@angular/common';
 @Component({
@@ -6,7 +6,7 @@ import { DatePipe } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'my-project';
   name ="1st change on this";
   count: number = 0;
