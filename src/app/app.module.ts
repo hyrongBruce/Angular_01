@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { FirstComponentComponent } from './first-component/first-component.component';
 import { InputDirectiveDirective } from './input-directive.directive';
 import { ClockComponent } from './clock/clock.component';
+import { CRUDComponent } from './crud/crud.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { AppRoutingModule } from "./app-routing.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponentComponent,
     InputDirectiveDirective,
-    ClockComponent
+    ClockComponent,
+    CRUDComponent
   ],
   imports: [
+    AppRoutingModule, // this is for rooting
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
