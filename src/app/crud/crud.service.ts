@@ -6,13 +6,13 @@ import { map } from "rxjs/operators";
 import { Subject } from 'rxjs';
 @Injectable({ providedIn: "root" })
 export class CRUDService{
-    private posts: Post[] = [];
+    // private posts: Post[] = [];
     public url :string = "https://jsonplaceholder.typicode.com/posts";
 
-    private postsUpdated = new Subject<{ posts: Post[]; postCount: number }>();
+    // private postsUpdated = new Subject<{ posts: Post[]; postCount: number }>();
     // init service
     constructor(private http: HttpClient){}
-
+/**  old version -- doesn't work 
     getPosts(){
 //         this.posts = fetch('https://jsonplaceholder.typicode.com/todos/1')
 // .then(response => response.json())
@@ -54,4 +54,20 @@ export class CRUDService{
         //         });
         //       });
     }
+    */
+
+    // these code are from lecture which I saw on 9.23 
+    getPosts(){
+      return this.http.get(this.url);
+    }
+    delete(id){
+      return this.http.delete(this.url+'/'+id);
+    }
+    update(id,post){
+      return this.http.put(this.url+'/'+id,post);
+    }
+    add(post){
+      return this.http.post(this.url+'/',post);
+    }
+
 } 

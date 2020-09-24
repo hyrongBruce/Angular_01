@@ -1,8 +1,28 @@
 <div>
     <h3>CRUD Test</h3> 
     <!-- {{posts}} -->
-    <p *ngFor = "let post of posts">
-        {{post.id}}
-        {{post.title}}
-    </p>
+    <!-- <p *ngFor = "let post of posts">
+       
+       
+       
+       
+    </p> -->
+    <tr>
+        <th>userID</th>
+        <th>id</th>
+        <th>title</th>
+        <th>Body</th>
+        <th>Operation</th>
+        <th><button (click)=add()>Add</button></th>
+    </tr>
+    <tr *ngFor = "let post of posts">
+        <td>{{post.userId}}</td>
+        <td>{{post.id}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.body}}</td>
+        <td>
+            <button (click)=delete(post.id)>delete</button>
+            <button (click)=update(post.id)>Update</button>
+        </td>
+    </tr>
 </div>

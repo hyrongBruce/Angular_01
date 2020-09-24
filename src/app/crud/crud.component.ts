@@ -8,12 +8,43 @@ import { Post } from './post.model';
   styleUrls: ['./crud.component.css']
 })
 export class CRUDComponent implements OnInit {
-  posts: Post[] = [];
+  posts: any = [];
 
-  constructor(public CRUD: CRUDService ) {}
+  constructor(public CRUDService: CRUDService ) {}
 
   ngOnInit(): void {
-    this.CRUD.getPosts();
+    this.CRUDService.getPosts().subscribe(res=>{
+      // console.log(res);
+      this.posts = res;
+    });
+  }
+
+  delete(id){
+    this.CRUDService.delete(id).subscribe(
+      res=>{
+        console.log('deleteSuccess, with id ='+id);
+      }
+    );
+  }
+  update(id){
+    this.CRUDService.update(id,{'userID': 1,
+      'id': 1,
+      'title':'update',
+      'body':'string'}).subscribe(
+      res=>{
+        console.log('updateSuccess,with id=' +id);
+      }
+    )
+  }
+  add(){
+    this.CRUDService.add({'userID': 1,
+      'id': 1,
+      'title':'add',
+      'body':'string'}).subscribe(
+      res=>{
+        console.log('addSuccess,with this dummy api');
+      }
+    )
   }
 
 }

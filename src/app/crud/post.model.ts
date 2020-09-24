@@ -7,5 +7,5 @@ export interface Post {
     userID: number,
     id: number,
     title:string,
-    completed:boolean
+    body:string
   }
